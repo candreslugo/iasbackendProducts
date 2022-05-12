@@ -1,7 +1,6 @@
 package com.ias.backendProducts.types.application.ports.out;
 
 import com.ias.backendProducts.products.application.domain.Product;
-import com.ias.backendProducts.products.application.domain.ProductId;
 import com.ias.backendProducts.shared.sharedDomain.PageQuery;
 import com.ias.backendProducts.types.application.domain.TypeId;
 import com.ias.backendProducts.types.application.domain.Types;

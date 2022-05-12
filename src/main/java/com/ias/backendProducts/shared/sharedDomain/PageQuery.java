@@ -1,7 +1,5 @@
 package com.ias.backendProducts.shared.sharedDomain;
 
-import org.apache.commons.lang3.Validate;
-
 public class PageQuery {
 
    private final Page page;
