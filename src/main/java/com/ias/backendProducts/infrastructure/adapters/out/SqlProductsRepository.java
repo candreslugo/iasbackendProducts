@@ -3,6 +3,7 @@ package com.ias.backendProducts.infrastructure.adapters.out;
 import com.ias.backendProducts.products.application.domain.Product;
 import com.ias.backendProducts.products.application.domain.ProductId;
 import com.ias.backendProducts.products.application.models.ProductDBO;
+import com.ias.backendProducts.products.application.models.ProductDTO;
 import com.ias.backendProducts.products.application.ports.out.ProductRepository;
 import com.ias.backendProducts.shared.sharedDomain.PageQuery;
 import org.springframework.stereotype.Repository;
@@ -40,7 +41,7 @@ public class SqlProductsRepository implements ProductRepository {
             preparedStatement.execute();
 
         } catch (SQLException exception) {
-            throw new RuntimeException("Error querying database", exception);
+            throw new RuntimeException("Error querying database " + exception.getMessage(),  exception);
         }
     }
 
@@ -81,8 +82,20 @@ public class SqlProductsRepository implements ProductRepository {
         }
     }
 
+
+
     @Override
-    public void delete(ProductId productId) {
+    public void delete(Product product) {
+        String sql = "DELETE FROM product WHERE service_id = ?";
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setLong(1, product.getProductId().getValue());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+        } catch (SQLException exception) {
+            throw new RuntimeException("Error querying database", exception);
+        }
 
     }
 

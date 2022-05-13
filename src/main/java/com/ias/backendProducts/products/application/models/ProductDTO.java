@@ -3,14 +3,14 @@ package com.ias.backendProducts.products.application.models;
 import com.ias.backendProducts.products.application.domain.*;
 
 public class ProductDTO {
-    private Integer pruductId;
+    private Integer productId;
     private Integer productType;
     private String productName;
     private Integer productPrice;
     private Integer productDiscount;
 
     public ProductDTO(Integer pruductId, Integer productType, String productName, Integer productPrice, Integer productDiscount) {
-        this.pruductId = pruductId;
+        this.productId = pruductId;
         this.productType = productType;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -19,7 +19,7 @@ public class ProductDTO {
 
     public Product toDomain() {
         return new Product(
-                new ProductId(pruductId),
+                new ProductId(productId),
                 new ProductType(productType),
                 new ProductName(productName),
                 new ProductPrice(productPrice),
@@ -38,12 +38,12 @@ public class ProductDTO {
 
     }
 
-    public Integer getPruductId() {
-        return pruductId;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setPruductId(Integer pruductId) {
-        this.pruductId = pruductId;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public Integer getProductType() {

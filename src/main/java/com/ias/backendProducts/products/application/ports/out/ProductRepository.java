@@ -11,6 +11,6 @@ public interface ProductRepository {
     void store(Product product);
     Optional<Product> get(ProductId productId);
     void update(Product product);
-    void delete(ProductId productId);
+    void delete(Product product);
     List<Product> getProducts(PageQuery pageQuery);
 }

@@ -15,5 +15,9 @@ public class testType {
         } catch (NullPointerException exception) {
             System.out.println("error" + exception.getMessage());
         }
+        
+
     }
+
+
 }

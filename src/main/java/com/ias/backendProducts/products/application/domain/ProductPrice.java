@@ -6,7 +6,7 @@ public class ProductPrice {
     private final Integer value;
 
     public ProductPrice(Integer value) {
-        Validate.notNull(value,"product can not be null");
+        Validate.notNull(value,"productprice can not be null");
         this.value = value;
     }
 

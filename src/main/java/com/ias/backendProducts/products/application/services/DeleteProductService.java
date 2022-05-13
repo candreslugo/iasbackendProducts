@@ -3,18 +3,17 @@ package com.ias.backendProducts.products.application.services;
 import com.ias.backendProducts.products.application.domain.Product;
 import com.ias.backendProducts.products.application.domain.ProductId;
 import com.ias.backendProducts.products.application.models.ProductDTO;
-import com.ias.backendProducts.products.application.ports.in.QueryProductUseCase;
+import com.ias.backendProducts.products.application.ports.in.DeleteProductUseCase;
 import com.ias.backendProducts.products.application.ports.out.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
 @Service
-public class QueryProductService implements QueryProductUseCase {
+public class DeleteProductService implements DeleteProductUseCase {
 
-    private final ProductRepository productRepository;
+    public final ProductRepository productRepository;
 
-    public QueryProductService(ProductRepository productRepository)  {
+    public DeleteProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
@@ -23,8 +22,8 @@ public class QueryProductService implements QueryProductUseCase {
 
         ProductId productId = new ProductId(id);
         Optional<Product> product = productRepository.get(productId);
-        return product.map(product1 -> {
-            ProductDTO productDTO = ProductDTO.fronDomain(product1);
+        return product.map(product2 -> {
+            ProductDTO productDTO = ProductDTO.fronDomain(product2);
             return productDTO;
         });
     }

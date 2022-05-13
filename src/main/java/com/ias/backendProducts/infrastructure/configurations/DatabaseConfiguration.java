@@ -13,9 +13,9 @@ public class DatabaseConfiguration {
     @Bean
     public DataSource dataSource() {
         HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl("jdbc:postgresql://localhost:5432/products");
-        hikariConfig.setUsername("admin");
-        hikariConfig.setPassword("admin");
+        hikariConfig.setJdbcUrl("jdbc:postgresql://localhost:5434/product");
+        hikariConfig.setUsername("postgres_user");
+        hikariConfig.setPassword("postgres_password");
         return new HikariDataSource(hikariConfig);
     }
 

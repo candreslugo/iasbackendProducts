@@ -7,7 +7,7 @@ public class ProductType {
     private final Integer value;
 
     public ProductType(Integer value) {
-        Validate.notNull(value,"product can not be null");
+        Validate.notNull(value,"productype can not be null");
         this.value = value;
     }
 

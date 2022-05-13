@@ -37,14 +37,5 @@ public class Product {
         return discount;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", typeOfProduct=" + typeOfProduct +
-                ", name=" + name +
-                ", price=" + price +
-                ", discount=" + discount +
-                '}';
-    }
+
 }

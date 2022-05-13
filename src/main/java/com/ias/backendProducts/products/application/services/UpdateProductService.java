@@ -4,7 +4,9 @@ import com.ias.backendProducts.products.application.domain.Product;
 import com.ias.backendProducts.products.application.models.ProductDTO;
 import com.ias.backendProducts.products.application.ports.in.UpdateProductUseCase;
 import com.ias.backendProducts.products.application.ports.out.ProductRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UpdateProductService implements UpdateProductUseCase {
 
     private final ProductRepository productRepository;
